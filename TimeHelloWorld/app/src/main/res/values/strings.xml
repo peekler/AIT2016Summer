@@ -4,4 +4,5 @@
     <string name="time_header">Time is: </string>
     <string name="hint_username">Enter your username here</string>
     <string name="error_empty">This field can not be empty!</string>
+    <string name="welcome_text">Hello AIT Team!</string>
 </resources>

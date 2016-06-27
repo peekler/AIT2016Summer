@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Todo</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="undo">UNDO</string>
+    <string name="save">Save</string>
+    <string name="sorry">Sorry, adding the new item was not successful!</string>
+</resources>

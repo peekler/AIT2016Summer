@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -153,8 +155,21 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     .getStringArrayList(
                             android.speech.SpeechRecognizer.RESULTS_RECOGNITION);
             tvDetectedText.setText("");
+            boolean timeDetected = false;
+            boolean sureDetected = false;
             for (String text : data) {
                 tvDetectedText.append(text + "\n");
+                if (!timeDetected && text.contains("time")) {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(
+                            "HH:mm:ss");
+                    speak(dateFormat.format(new Date(System.currentTimeMillis())));
+                    timeDetected = true;
+                }
+
+                if (!sureDetected && text.contains("sure")) {
+                    speak("Yes, I'm sure Peter");
+                    sureDetected = true;
+                }
             }
         }
 
